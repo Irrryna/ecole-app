@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { supabaseBrowser } from '@/lib/supabase/client';
+import { supabase } from '@/lib/supabase/client';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 
@@ -14,7 +14,6 @@ const [error, setError] = useState<string|undefined>();
 async function onSubmit(e: React.FormEvent) {
 e.preventDefault();
 setError(undefined); setInfo(undefined);
-const supabase = supabaseBrowser();
 const { error } = await supabase.auth.resetPasswordForEmail(email, {
 redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/reset`,
 });

@@ -1,0 +1,1 @@
+export function UkrainianDecorations({ className }: { className?: string }) { return <div className={className}></div>; }

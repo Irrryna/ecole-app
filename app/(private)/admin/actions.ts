@@ -37,3 +37,12 @@ export async function approveUser(userId: string) {
   // 3. Revalider le cache de la page admin pour voir le changement immédiatement
   revalidatePath('/admin')
 }
+
+export async function approve(formData: FormData){
+  'use server';
+  const id = formData.get('id') as string;
+  const cookieStore = cookies();
+  const supabase = createRouteHandlerClient({ cookies: () => cookieStore });
+  await supabase.from('profiles').update({ approval_status: 'approved' }).eq('id', id);
+  revalidatePath('/admin');
+}

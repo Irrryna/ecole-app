@@ -1,0 +1,1 @@
+export function VyshyvankaPattern({ position, size, className }: { position: string, size: string, className: string }) { return <div className={`${position} ${size} ${className}`}></div>; }

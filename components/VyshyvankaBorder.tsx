@@ -1,0 +1,1 @@
+export function VyshyvankaBorder({ orientation, className }: { orientation: string, className?: string }) { return <div className={className}>Vyshyvanka Border ({orientation})</div>; }

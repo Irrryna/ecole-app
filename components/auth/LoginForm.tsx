@@ -1,7 +1,7 @@
 'use client';
 import { useState, useTransition } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { supabaseBrowser } from '@/lib/supabase/client';
+import { supabase } from '@/lib/supabase/client';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 
@@ -18,7 +18,6 @@ const next = useSearchParams().get('next') || '/';
 async function onSubmit(e: React.FormEvent) {
 e.preventDefault();
 setError(undefined);
-const supabase = supabaseBrowser();
 const { error } = await supabase.auth.signInWithPassword({ email, password });
 if (error) return setError(error.message);
 startTransition(() => router.replace(next));

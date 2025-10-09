@@ -1,1 +1,19 @@
-node_modules
+﻿# Dependencies
+node_modules/
+npm-debug.log*
+yarn.lock
+pnpm-lock.yaml
+
+# Next.js
+.next/
+out/
+.vercel/
+.next/cache/
+
+# Env (garde seulement l'exemple)
+.env*
+!.env.example
+
+# OS/Editor
+.DS_Store
+*.log

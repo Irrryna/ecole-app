@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { supabaseBrowser } from '@/lib/supabase/client';
+import { supabase } from '@/lib/supabase/client';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 
@@ -16,8 +16,7 @@ const [error, setError] = useState<string|undefined>();
 async function onSubmit(e: React.FormEvent) {
 e.preventDefault();
 setError(undefined); setMessage(undefined);
-const supabase = supabaseBrowser();
-const { data, error } = await supabase.auth.signUp({ email, password, options: { data: { display_name: displayName } } });
+const { error } = await supabase.auth.signUp({ email, password, options: { data: { display_name: displayName } } });
 if (error) return setError(error.message);
 setMessage('Compte créé. Vérifie tes emails pour valider.');
 }

@@ -1,5 +1,6 @@
-import { createSupabaseServer } from '@/lib/supabase/server';
+import { createServerClient } from '@/lib/supabase/server';
 import { getProfile } from '@/lib/auth';
+import { createHomework, deleteHomework } from './actions';
 
 
 export default async function TeacherHomeworksPage(){
@@ -7,7 +8,7 @@ const profile = await getProfile();
 if (!profile || profile.approval_status !== 'approved' || (profile.role !== 'teacher' && profile.role !== 'admin')) {
 return <p>Accès interdit.</p>;
 }
-const supabase = createSupabaseServer();
+const supabase = createServerClient();
 const { data: list } = await supabase
 .from('homeworks')
 .select('id, title, due_at')
@@ -36,23 +37,4 @@ return (
 </ul>
 </section>
 );
-}
-
-
-export async function createHomework(formData: FormData){
-'use server';
-const supabase = createSupabaseServer();
-const title = String(formData.get('title') || '');
-const due_at = String(formData.get('due_at') || '');
-const { data: { user } } = await supabase.auth.getUser();
-if (!user) return;
-await supabase.from('homeworks').insert({ title, due_at, teacher_id: user.id, course_id: null });
-}
-
-
-export async function deleteHomework(formData: FormData){
-'use server';
-const supabase = createSupabaseServer();
-const id = String(formData.get('id') || '');
-await supabase.from('homeworks').delete().eq('id', id);
 }
