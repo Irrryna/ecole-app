@@ -61,7 +61,7 @@ export function ParentalPlanningPage({ onBack }: { onBack: () => void }) {
       return;
     }
     // Logic to sign up for a slot
-    alert(`S'inscrire pour la date: ${date}`);
+    alert(`S&apos;inscrire pour la date: ${date}`);
     // In a real app, this would trigger a server action
   };
 
@@ -157,7 +157,7 @@ export function ParentalPlanningPage({ onBack }: { onBack: () => void }) {
                   {isAuthenticated && (
                     <td className="py-2 px-4 border-b">
                       <Button onClick={() => handleSignUp(slot.date)} disabled={!!slot.parent1_id && !!slot.parent2_id && !!slot.parent3_id}>
-                        S'inscrire
+                        S&apos;inscrire
                       </Button>
                     </td>
                   )}
