@@ -1,32 +1,37 @@
-import { ButtonHTMLAttributes } from 'react';
-import { clsx } from 'clsx';
+// components/ui/button.tsx
+import * as React from "react";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'default' | 'ghost' | 'outline' | 'icon'; // Added variant prop
-  size?: 'default' | 'sm' | 'lg' | 'icon'; // Added size prop
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: "default" | "ghost" | "outline" | "icon";
+  size?: "default" | "sm" | "lg" | "icon";
 }
 
-export function Button({ className, variant = 'default', size = 'default', ...props }: ButtonProps) {
-  const baseStyles = 'rounded-lg font-medium hover:opacity-90 disabled:opacity-50 transition-colors';
+const base =
+  "inline-flex items-center justify-center rounded-lg font-medium transition " +
+  "hover:opacity-90 disabled:opacity-50";
 
-  const variantStyles = {
-    default: 'bg-blue-600 text-white hover:bg-blue-700',
-    ghost: 'bg-transparent hover:bg-gray-100 text-gray-800',
-    outline: 'border border-gray-300 bg-transparent hover:bg-gray-100 text-gray-800',
-    icon: 'bg-transparent hover:bg-gray-100 text-gray-800', // Added icon variant
-  };
+const variants: Record<NonNullable<ButtonProps["variant"]>, string> = {
+  default: "bg-blue-600 text-white hover:bg-blue-700",
+  ghost: "bg-transparent hover:bg-gray-100 text-gray-800",
+  outline: "border border-gray-300 bg-transparent hover:bg-gray-100 text-gray-800",
+  icon: "bg-transparent hover:bg-gray-100 text-gray-800",
+};
 
-  const sizeStyles = {
-    default: 'px-4 py-2',
-    sm: 'px-3 py-1.5 text-sm',
-    lg: 'px-5 py-3 text-lg',
-    icon: 'h-10 w-10', // Added icon size
-  };
+const sizes: Record<NonNullable<ButtonProps["size"]>, string> = {
+  default: "px-4 py-2",
+  sm: "px-3 py-1.5 text-sm",
+  lg: "px-5 py-3 text-lg",
+  icon: "h-10 w-10",
+};
 
-  return (
-    <button
-      className={clsx(baseStyles, variantStyles[variant], sizeStyles[size], className)}
-      {...props}
-    />
-  );
+export function Button({
+  className = "",
+  variant = "default",
+  size = "default",
+  ...props
+}: ButtonProps) {
+  const cls = [base, variants[variant], sizes[size], className].join(" ").trim();
+  return <button className={cls} {...props} />;
 }
+
+export default Button;

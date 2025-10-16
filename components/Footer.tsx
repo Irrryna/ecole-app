@@ -1,9 +1,9 @@
 import { MapPin, Phone, Mail, Facebook, Instagram, Heart } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "./ui/button";          // ⟵ corriger l'import (majuscule)
 import { VyshyvankaBorder } from "./VyshyvankaBorder";
 import Image from "next/image";
 
-const logoImage = "/logoseul.png"; // Using the same logo as Navigation
+const logoImage = "/logoseul.png";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -14,19 +14,19 @@ export function Footer() {
       <div className="absolute top-0 left-0 w-full">
         <VyshyvankaBorder orientation="horizontal" className="opacity-60" />
       </div>
-      
+
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* À propos */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-12 h-12 bg-white rounded-full p-1.5 flex items-center justify-center">
-                <Image 
-                  src={logoImage} 
-                  alt="École Ukrainienne Saint-Nicolas" 
+                <Image
+                  src={logoImage}
+                  alt="École Ukrainienne Saint-Nicolas"
                   className="w-full h-full object-contain"
-                  width={48} // Added width
-                  height={48} // Added height
+                  width={48}
+                  height={48}
                 />
               </div>
               <div>
@@ -35,21 +35,23 @@ export function Footer() {
               </div>
             </div>
             <p className="text-blue-100 mb-4">
-              Un lieu d&apos;apprentissage et de préservation de la culture ukrainienne 
+              Un lieu d&apos;apprentissage et de préservation de la culture ukrainienne
               au cœur de Lyon, pour les enfants et leurs familles.
             </p>
             <div className="flex space-x-3">
-              <Button 
-                variant="ghost" 
+              <Button
+                variant="ghost"
                 size="icon"
                 className="text-white hover:bg-blue-600"
+                aria-label="Facebook"
               >
                 <Facebook className="w-4 h-4" />
               </Button>
-              <Button 
-                variant="ghost" 
+              <Button
+                variant="ghost"
                 size="icon"
                 className="text-white hover:bg-blue-600"
+                aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
               </Button>
@@ -94,12 +96,12 @@ export function Footer() {
                   <p>69001 Lyon, France</p>
                 </div>
               </div>
-              
+
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 flex-shrink-0" />
                 <p>+33 4 78 28 32 45</p>
               </div>
-              
+
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 flex-shrink-0" />
                 <p>contact@ecole-ukrainienne-lyon.fr</p>
@@ -114,7 +116,7 @@ export function Footer() {
             <div className="text-blue-100 text-center md:text-left">
               <p>&copy; {currentYear} École Ukrainienne de Saint-Nicolas à Lyon. Tous droits réservés.</p>
             </div>
-            
+
             <div className="flex items-center space-x-2 text-blue-100">
               <span>Fait avec</span>
               <Heart className="w-4 h-4 text-red-400 fill-current" />

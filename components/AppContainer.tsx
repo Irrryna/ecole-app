@@ -45,7 +45,7 @@ export default function AppContainer() {
       
       {/* Section Hero avec carrousel */}
       {currentPage === "home" && (
-        <section className="px-6 py-8 relative">
+        <section id="home" className="px-6 py-8 relative">
           <div className="max-w-6xl mx-auto">
             <HeroCarousel />
           </div>
