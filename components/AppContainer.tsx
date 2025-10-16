@@ -1,16 +1,16 @@
 'use client';
 
 import { useState } from "react";
-import { Navigation } from "./Navigation";
-import { HeroCarousel } from "./HeroCarousel";
-import { AboutSection } from "./AboutSection";
-import { NewsSection } from "./NewsSection";
-import { BlogSection } from "./BlogSection";
-import { ContactSection } from "./ContactSection";
-import { Footer } from "./Footer";
-import { ParentalPlanningPage } from "./ParentalPlanningPage";
-import { LanguageProvider } from "./LanguageContext";
-import { TeamPage } from "./TeamPage";
+import { Navigation } from "@/components/Navigation";
+import { HeroCarousel } from "@/components/HeroCarousel";
+import { AboutSection } from "@/components/AboutSection";
+import { NewsSection } from "@/components/NewsSection";
+import { BlogSection } from "@/components/BlogSection";
+import { ContactSection } from "@/components/ContactSection";
+import { Footer } from "@/components/Footer";
+import { ParentalPlanningPage } from "@/components/ParentalPlanningPage";
+import { LanguageProvider } from "@/components/LanguageContext";
+import { TeamPage } from "@/components/TeamPage";
 
 export default function AppContainer() {
   const [currentPage, setCurrentPage] = useState("home");
