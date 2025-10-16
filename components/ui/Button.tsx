@@ -24,14 +24,13 @@ const sizes: Record<NonNullable<ButtonProps["size"]>, string> = {
   icon: "h-10 w-10",
 };
 
-export function Button({
-  className = "",
-  variant = "default",
-  size = "default",
-  ...props
-}: ButtonProps) {
-  const cls = [base, variants[variant], sizes[size], className].join(" ").trim();
-  return <button className={cls} {...props} />;
-}
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className = "", variant = "default", size = "default", ...props }, ref) => {
+    const cls = [base, variants[variant], sizes[size], className].join(" ").trim();
+    return <button className={cls} {...props} ref={ref} />;
+  }
+);
+Button.displayName = "Button";
 
+export { Button };
 export default Button;
