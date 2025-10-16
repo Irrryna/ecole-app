@@ -1,9 +1,9 @@
 import { MapPin, Phone, Mail, Facebook, Instagram, Heart } from "lucide-react";
-import { Button } from "./ui/Button";
+import { Button } from "./ui/button";
 import { VyshyvankaBorder } from "./VyshyvankaBorder";
 import Image from "next/image";
 
-const logoImage = "/logopng.png"; // Using the same logo as Navigation
+const logoImage = "/logoseul.png"; // Using the same logo as Navigation
 
 export function Footer() {
   const currentYear = new Date().getFullYear();

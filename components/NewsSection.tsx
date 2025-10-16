@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Calendar, ArrowRight } from "lucide-react";
-import { Button } from "./ui/Button";
+import { Button } from "./ui/button";
 import { VyshyvankaPattern } from "./VyshyvankaPattern";
 
 export function NewsSection() {
@@ -23,7 +23,7 @@ export function NewsSection() {
     },
     {
       id: 3,
-      title: "Exposition sur l&apos;artisanat ukrainien",
+      title: "Exposition sur l'artisanat ukrainien",
       excerpt: "Découvrez l&apos;art traditionnel ukrainien à travers une exposition interactive organisée par nos élèves.",
       date: "2025-11-08",
       category: "Culture"

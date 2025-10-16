@@ -5,18 +5,19 @@ import { Navigation } from "./Navigation";
 import { HeroCarousel } from "./HeroCarousel";
 import { AboutSection } from "./AboutSection";
 import { NewsSection } from "./NewsSection";
-import { TeachersSection } from "./TeachersSection";
 import { BlogSection } from "./BlogSection";
 import { ContactSection } from "./ContactSection";
 import { Footer } from "./Footer";
 import { ParentalPlanningPage } from "./ParentalPlanningPage";
 import { LanguageProvider } from "./LanguageContext";
+import { TeamPage } from "./TeamPage";
 
 export default function AppContainer() {
   const [currentPage, setCurrentPage] = useState("home");
 
   const handleNavigate = (page: string) => {
     setCurrentPage(page);
+    window.scrollTo(0, 0);
   };
 
   // Si on est sur la page planning, on affiche seulement cette page
@@ -24,6 +25,14 @@ export default function AppContainer() {
     return (
       <LanguageProvider>
         <ParentalPlanningPage onBack={() => setCurrentPage("home")} />
+      </LanguageProvider>
+    );
+  }
+
+  if (currentPage === "team") {
+    return (
+      <LanguageProvider>
+        <TeamPage onBack={() => setCurrentPage("home")} />
       </LanguageProvider>
     );
   }
@@ -56,11 +65,7 @@ export default function AppContainer() {
         </div>
       )}
 
-      {(currentPage === "home" || currentPage === "teachers") && (
-        <div id="teachers">
-          <TeachersSection />
-        </div>
-      )}
+
 
       {(currentPage === "home" || currentPage === "blog") && (
         <div id="blog">
