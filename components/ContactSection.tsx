@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { Input } from "./ui/Input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
