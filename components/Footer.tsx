@@ -1,6 +1,6 @@
 import { MapPin, Phone, Mail, Facebook, Instagram, Heart } from "lucide-react";
-import { Button } from "./ui/button";          // ⟵ corriger l'import (majuscule)
-import { VyshyvankaBorder } from "./VyshyvankaBorder";
+import { Button } from "@/components/ui/button";
+import { VyshyvankaBorder } from "@/components/VyshyvankaBorder";
 import Image from "next/image";
 
 const logoImage = "/logoseul.png";

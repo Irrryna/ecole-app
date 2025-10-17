@@ -1,7 +1,7 @@
-import { Card, CardContent } from "./ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Users, BookOpen, Globe } from "lucide-react";
-import { VyshyvankaPattern } from "./VyshyvankaPattern";
-import { UkrainianDecorations } from "./UkrainianDecorations";
+import { VyshyvankaPattern } from "@/components/VyshyvankaPattern";
+import { UkrainianDecorations } from "@/components/UkrainianDecorations";
 
 export function AboutSection() {
   const features = [

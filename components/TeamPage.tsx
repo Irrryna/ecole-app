@@ -1,6 +1,6 @@
-import { VyshyvankaPattern } from "./VyshyvankaPattern";
-import { SunflowerDecoration } from "./SunflowerDecoration";
-import { useLanguage } from "./LanguageContext";
+import { VyshyvankaPattern } from "@/components/VyshyvankaPattern";
+import { SunflowerDecoration } from "@/components/SunflowerDecoration";
+import { useLanguage } from "@/components/LanguageContext";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 

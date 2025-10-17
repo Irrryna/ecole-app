@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { useLanguage } from "./LanguageContext";
+import { useLanguage } from "@/components/LanguageContext";
 
 interface NavigationProps {
   currentPage: string;

@@ -1,10 +1,10 @@
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "./ui/Input";
-import { Textarea } from "./ui/textarea";
-import { Label } from "./ui/label";
+import { Input } from "@/components/ui/Input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from "lucide-react";
-import { VyshyvankaPattern } from "./VyshyvankaPattern";
+import { VyshyvankaPattern } from "@/components/VyshyvankaPattern";
 
 export function ContactSection() {
   return (
